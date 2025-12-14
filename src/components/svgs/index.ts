@@ -1,0 +1,11 @@
+export { default as Urban } from "@/components/svgs/urban.svg";
+export { default as Sales } from "@/components/svgs/sales.svg";
+export { default as Survey } from "@/components/svgs/Survey.svg";
+export { default as Piggery } from "@/components/svgs/Piggery.svg";
+export { default as Developer } from "@/components/svgs/Developer.svg";
+export { default as Construct } from "@/components/svgs/Construct.svg";
+export { default as Borehole } from "@/components/svgs/Borehole.svg";
+export { default as Estate } from "@/components/svgs/Estate.svg";
+export { default as Drawing } from "@/components/svgs/Drawings.svg";
+export { default as Bar } from "@/components/svgs/Bar.svg";
+export { default as Whatsapp } from "@/components/svgs/Whatsapp.svg";
