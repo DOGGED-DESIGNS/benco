@@ -6,7 +6,7 @@ import { Button } from "./ui/button";
 
 export default function About() {
   return (
-    <div className=" px-3 py-5 mt-8  gap-10 grid grid-cols-1 max-w-screen-lg w-full mx-auto md:grid-cols-2">
+    <div className=" px-3 py-5 my-20  m gap-10 grid grid-cols-1 max-w-screen-lg w-full mx-auto md:grid-cols-2">
       <div>
         <div className=" relative w-full  overflow-hidden  aspect-video ">
           <Image
@@ -22,7 +22,10 @@ export default function About() {
       </div>
 
       <div className=" self-center">
-        <h1 className=" h1  text-center font-bold mb-10 "> About Us </h1>
+        <h1 className=" h1 uppercase text-center font-bold mb-10 ">
+          {" "}
+          About Us{" "}
+        </h1>
 
         <p className=" line-clamp-4   p2">
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi illum

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +8,17 @@ import { Facebook, Instagram } from "./svgs";
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
+  const refnav = useRef<HTMLDivElement>(null);
+  const [height, setHeight] = useState(50);
+
+  useEffect(() => {
+    if (toggle && refnav.current) {
+      setHeight(refnav.current.offsetHeight + 60);
+    } else {
+      setHeight(50); // reset to default height
+    }
+  }, [toggle]);
+
   return (
     <nav>
       <div className="  flex  bg-slate-200 items-center gap-4  py-4 px-2 w-full">
@@ -21,24 +32,31 @@ export default function Navbar() {
             />
           </div>
           <div>
-            <h1 className=" m-0 h2">BENCO DE LIGHT CONSTRUCTION</h1>
-            <h1 className=" m-0 h6  uppercase text-center text-white tracking-wider ">
+            <h1 className=" m-0 text-center  h8">
+              BENCO DE LIGHT CONSTRUCTION
+            </h1>
+            <h1 className=" m-0 h8  uppercase text-center text-white tracking-wider ">
               God our rienfocer
             </h1>
           </div>
         </Link>
 
-        <div className=" flex gap-2 ml-auto">
+        <div className=" flex pr-4 gap-10 ml-auto">
           <Link href={"#"}>
-            <Instagram className=" fill-current w-8 h-8  text-black" />
+            <Instagram className=" fill-current md:w-8 md:h-8 h-4 w-4  text-black" />
           </Link>
           <Link href={"#"}>
-            <Facebook className="fill-current  w-8 h-8 text-black" />
+            <Facebook className="fill-current   md:w-8 md:h-8 h-4 w-4 text-black" />
           </Link>
         </div>
       </div>
 
-      <motion.div className=" flex flex-col   bg-primary py-3 px-3">
+      <motion.div
+        style={{
+          height: height,
+        }}
+        className=" flex flex-col transition-all duration-150 ease-in-out   bg-primary py-3 px-3"
+      >
         <div onClick={() => setToggle(!toggle)} className="   my-auto flex  ">
           <div className="ml-auto">
             {toggle ? (
@@ -49,47 +67,49 @@ export default function Navbar() {
           </div>
         </div>
 
+        <AnimatePresence key={"move"} mode="wait">
+          {toggle && (
+            <motion.div
+              ref={refnav}
+              layout
+              initial={{
+                y: "-100%",
+                opacity: 0,
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+              }}
+              exit={{
+                y: "-100%",
+                opacity: 0,
+              }}
+              className=" bg-primary p-4  flex flex-col mt-0 space-y-4 "
+            >
+              <Link
+                href={"#"}
+                className=" hover:bg-slate-300/20 p-2 rounded-md duration-300 transition-all  text-white font-semibold p2 uppercase"
+              >
+                HOME
+              </Link>
+              <Link
+                href={"#"}
+                className=" hover:bg-slate-300/20 p-2 rounded-md duration-300 transition-all  text-white font-semibold p2 uppercase"
+              >
+                ABOUT
+              </Link>
+              <Link
+                href={"#"}
+                className=" flex gap-1 hover:bg-slate-300/20 p-2 rounded-md duration-300 transition-all  text-white font-semibold p2 uppercase"
+              >
+                SERVICES <ChevronDown />
+              </Link>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* links */}
       </motion.div>
-      <AnimatePresence key={"move"} mode="wait">
-        {toggle && (
-          <motion.div
-            layout
-            initial={{
-              y: "-100%",
-              opacity: 0,
-            }}
-            animate={{
-              y: 0,
-              opacity: 1,
-            }}
-            exit={{
-              y: "-100%",
-              opacity: 0,
-            }}
-            className=" bg-primary p-4  flex flex-col mt-0 space-y-4 "
-          >
-            <Link
-              href={"#"}
-              className=" hover:bg-slate-300/20 p-2 rounded-md duration-300 transition-all  text-white font-semibold p2 uppercase"
-            >
-              HOME
-            </Link>
-            <Link
-              href={"#"}
-              className=" hover:bg-slate-300/20 p-2 rounded-md duration-300 transition-all  text-white font-semibold p2 uppercase"
-            >
-              ABOUT
-            </Link>
-            <Link
-              href={"#"}
-              className=" flex gap-1 hover:bg-slate-300/20 p-2 rounded-md duration-300 transition-all  text-white font-semibold p2 uppercase"
-            >
-              SERVICES <ChevronDown />
-            </Link>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </nav>
   );
 }

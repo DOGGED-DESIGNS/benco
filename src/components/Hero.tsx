@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { data } from "@/constants/data";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -8,6 +8,17 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 
 export default function Hero() {
+  const [height, setHeight] = useState(0);
+  const [toggle, setToggle] = useState(false);
+
+  const refdiv = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    if (refdiv.current) {
+      setHeight(refdiv.current.offsetHeight);
+      console.log(refdiv.current.offsetHeight);
+    }
+  }, [toggle]);
+
   const [peopleindex, setPeopleindex] = useState(0);
   useEffect(() => {
     if (peopleindex < 0) {
@@ -98,6 +109,7 @@ export default function Hero() {
 
         <AnimatePresence mode="wait">
           <motion.div
+            ref={refdiv}
             transition={{
               delay: 0.1,
               duration: 0.3,
@@ -116,7 +128,7 @@ export default function Hero() {
               x: "-100%",
             }}
             key={peopleindex}
-            className="  mt-5 flex-wrap  flex gap-4 "
+            className="   mt-5 flex-wrap  flex gap-4 "
           >
             <Button className="flex-1 rounded-none" size={"lg"}>
               {" "}
@@ -128,19 +140,37 @@ export default function Hero() {
               className="  rounded-none flex-1 text-primary"
             >
               {" "}
-              Contact us
+              Our Projects
             </Button>
           </motion.div>
         </AnimatePresence>
       </div>
-      <div className="z-20 absolute top-1/2 left-0 ">
-        <Button onClick={() => setPeopleindex(peopleindex - 1)} size={"icon"}>
+      <div
+        className="z-20 absolute top-1/2 left-0 "
+        style={{
+          height: height, // dynamic height
+        }}
+      >
+        <Button
+          className=" h-full bg-transparent border-2 rounded-none border-white"
+          onClick={() => setPeopleindex(peopleindex - 1)}
+          size={"icon"}
+        >
           {" "}
           <ChevronLeft />{" "}
         </Button>
       </div>
-      <div className="z-20 absolute top-1/2 right-0 ">
-        <Button onClick={() => setPeopleindex(peopleindex + 1)} size={"icon"}>
+      <div
+        className="z-20 absolute top-1/2 right-0 "
+        style={{
+          height: height, // dynamic height
+        }}
+      >
+        <Button
+          className="  h-full bg-transparent border-2 rounded-none border-white"
+          onClick={() => setPeopleindex(peopleindex + 1)}
+          size={"icon"}
+        >
           {" "}
           <ChevronRight />{" "}
         </Button>

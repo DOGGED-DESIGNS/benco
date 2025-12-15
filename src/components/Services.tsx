@@ -56,8 +56,8 @@ const mover: { name: string; img: React.ReactNode }[] = [
 
 export default function Services() {
   return (
-    <div className=" px-10 my-10">
-      <p className=" text-center h1">Our Services</p>
+    <div className=" px-10 my-20">
+      <p className=" text-center uppercase h1">Our Services</p>
 
       <div className="p-4 relative    max-w-xl w-full mx-auto overflow-x-hidden">
         {/* this is the left */}

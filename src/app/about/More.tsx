@@ -54,8 +54,8 @@ export default function More() {
       {/* out mission */}
       <div className=" px-2">
         <div className="  my-20 space-y-8  max-w-screen-lg w-full mx-auto flex flex-col">
-          <h1 className=" h1  text-4xl mr-auto">OUR MISSION</h1>
-          <h1 className="  p2 max-w-[40ch]  ml-auto text-justify">
+          <h1 className=" h1 p-2  text-4xl mr-auto">OUR MISSION</h1>
+          <h1 className="  p2 max-w-[40ch] p-2   ml-auto text-justify">
             {" "}
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
             placeat ad voluptate natus. Necessitatibus, perferendis facere.
@@ -66,8 +66,8 @@ export default function More() {
           </h1>
         </div>
         <div className="  my-20 space-y-8  max-w-screen-lg w-full mx-auto flex flex-col">
-          <h1 className=" h1  text-4xl ml-auto">OUR OBJECTIVE</h1>
-          <h1 className="  p2 max-w-[40ch]   mr-auto text-justify">
+          <h1 className=" h1  text-4xl ml-auto p-2">OUR OBJECTIVE</h1>
+          <h1 className="  p-2 p2 max-w-[40ch]   mr-auto text-justify">
             {" "}
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
             placeat ad voluptate natus. Necessitatibus, perferendis facere.
@@ -80,7 +80,7 @@ export default function More() {
       </div>
 
       <div className=" my-20 px-5 max-w-screen-lg w-full mx-auto">
-        <h1 className=" text-4xl h1 text-center">
+        <h1 className=" p-2 text-4xl h1 text-center">
           {" "}
           WHAT WE DISTINGUISH OURSELVES FOR
         </h1>
