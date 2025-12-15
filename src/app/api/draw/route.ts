@@ -14,7 +14,7 @@ export async function GET(req: Request) {
     const items = await db.ben.findMany({
       take,
       skip,
-      orderBy: { createdAt: "desc" }, // newest first
+      //   orderBy: { createdAt: "desc" }, // newest first
     });
 
     // Count total items to determine if there are more pages

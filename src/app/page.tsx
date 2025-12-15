@@ -16,7 +16,6 @@ export default function page() {
       <Services />
       <Featured />
       <Contact />
-      <Footer />
     </MaxWrapper>
   );
 }

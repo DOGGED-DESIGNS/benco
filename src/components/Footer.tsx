@@ -1,10 +1,70 @@
-import Link from "next/link";
+"use client";
 import React from "react";
+import {
+  Facebook,
+  Instagram,
+  Pinterest,
+  Ticktok,
+  Twitter,
+  Whatsapp,
+  Youtube,
+} from "./svgs";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <div className=" flex  px-5 border   flex-col  pt-20 pb-12 bg-primary ">
-      <div className=" mx-auto mb-8 flex gap-5 "></div>
+      <div className=" mx-auto mb-8 flex gap-5 ">
+        <Link
+          href={"#"}
+          className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#1877F2]"
+        >
+          <Facebook className=" group-hover:text-white transition-all duration-300 ease-in-ou fill-current h-5 w-5" />
+        </Link>
+        {/* twiter */}
+        {/* <Link
+          href={"#"}
+          className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#1DA1F2]"
+        >
+          <Twitter className=" group-hover:text-white transition-all duration-300 ease-in-ou fill-current h-5 w-5" />
+        </Link> */}
+        {/* pinterstes */}
+        <Link
+          href={"#"}
+          className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#E60023]"
+        >
+          <Pinterest className=" group-hover:text-white transition-all duration-300 ease-in-ou fill-current h-5 w-5" />
+        </Link>
+        {/* instagram */}
+        <Link
+          href={"#"}
+          className=" p-2 rounded-full transition-all duration-300 ease-in-out group bg-gradient-to-tr  hover:from-[#F58529]  hover:via-[#DD2A7B] hover:to-[#515BD4] "
+        >
+          <Instagram className=" group-hover:text-white transition-all duration-300 ease-in-out fill-current h-5 w-5" />
+        </Link>
+
+        {/* <Link
+          href={"#"}
+          className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#FF0000]"
+        >
+          <Youtube className=" group-hover:text-white transition-all duration-300 ease-in-out fill-current h-5 w-5" />
+        </Link> */}
+        {/* whatsapp */}
+        <Link
+          href={"#"}
+          className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#25D366]"
+        >
+          <Whatsapp className=" group-hover:text-white transition-all duration-300 ease-in-out fill-current h-5 w-5" />
+        </Link>
+
+        {/* <Link
+          href={"#"}
+          className=" group p-2 rounded-full transition-all duration-300 ease-in-out  bg-gradient-to-r hover:from-[#25F4EE] hover:via-black hover:to-[#FF0050]"
+        >
+          <Ticktok className=" group-hover:text-white transition-all duration-300 ease-in-out fill-current h-5 w-5" />
+        </Link> */}
+      </div>
 
       {/* links */}
       <div className=" mt-5 mx-auto flex-wrap justify-center  space-x-5 flex gap-1 ">
@@ -17,82 +77,43 @@ export default function Footer() {
           ABOUT US
         </Link>
         <Link href={"#"} className="h6    uppercase">
-          TEAM
+          CONTACT US
         </Link>
         <Link href={"#"} className="h6 whitespace-nowrap       uppercase">
-          TERMS AND CONDITIONS
+          FEATURED PROJECTS
         </Link>
         <Link href={"#"} className="h6 whitespace-nowrap uppercase">
           PRIVACY POLICY
         </Link>
-        <Link href={"#"} className="h6 whitespace-nowrap  uppercase">
+        {/* <Link href={"#"} className="h6 whitespace-nowrap  uppercase">
           COPYRIGHT
-        </Link>
+        </Link> */}
       </div>
 
       <div className=" max-w-screen-xl mx-auto w-full h-[1px] mt-3 bg-slate-500 " />
 
       <div className="    mt-8 w-full   max-w-screen-xl mx-auto">
-        <div className="  items-center gap-10 flex">
+        <div className="  items-center   space-y-4  gap-10 md:flex">
           <p className=" h8  uppercase font-extrabold  ">
             &copy;2025 all right reserved{" "}
           </p>
           <p className=" mx-auto flex-1 text-center max-w-[50ch] line-clamp-2 h6 font-light">
-            DoggedNaija is not responsible for the content of external sites and
-            news culled therefrom
+            no. 1 Ogoja Road Abakaliki, Edward Nkwegu Close, near Anglican
+            Abakaliki
           </p>
-          <div className=" ml-auto">Logo</div>
+          <div className=" items-center flex gap-4">
+            <div className=" ml-auto relative  bg-primary w-12 gap-3 aspect-square">
+              <Image
+                alt="logo"
+                src={"/benlogo.png"}
+                fill
+                className=" object-cover object-top h-full w-full"
+              />
+            </div>
+            <h2 className=" m-0 font-semibold P2"> BENCO DE LIGHT LIMITED </h2>
+          </div>
         </div>
       </div>
     </div>
   );
 }
-
-//    <Link
-//           href={"#"}
-//           className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#1877F2]"
-//         >
-//           <Facebook className=" group-hover:text-white transition-all duration-300 ease-in-ou fill-current h-5 w-5" />
-//         </Link>
-//         {/* twiter */}
-//         <Link
-//           href={"#"}
-//           className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#1DA1F2]"
-//         >
-//           <Twitter className=" group-hover:text-white transition-all duration-300 ease-in-ou fill-current h-5 w-5" />
-//         </Link>
-//         {/* pinterstes */}
-//         <Link
-//           href={"#"}
-//           className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#E60023]"
-//         >
-//           <Pinterest className=" group-hover:text-white transition-all duration-300 ease-in-ou fill-current h-5 w-5" />
-//         </Link>
-//         {/* instagram */}
-//         <Link
-//           href={"#"}
-//           className=" p-2 rounded-full transition-all duration-300 ease-in-out group bg-gradient-to-tr  hover:from-[#F58529]  hover:via-[#DD2A7B] hover:to-[#515BD4] "
-//         >
-//           <Instagram className=" group-hover:text-white transition-all duration-300 ease-in-out fill-current h-5 w-5" />
-//         </Link>
-
-//         <Link
-//           href={"#"}
-//           className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#FF0000]"
-//         >
-//           <Youtube className=" group-hover:text-white transition-all duration-300 ease-in-out fill-current h-5 w-5" />
-//         </Link>
-//         {/* whatsapp */}
-//         <Link
-//           href={"#"}
-//           className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#25D366]"
-//         >
-//           <Whatsapp className=" group-hover:text-white transition-all duration-300 ease-in-out fill-current h-5 w-5" />
-//         </Link>
-
-//         <Link
-//           href={"#"}
-//           className=" group p-2 rounded-full transition-all duration-300 ease-in-out  bg-gradient-to-r hover:from-[#25F4EE] hover:via-black hover:to-[#FF0050]"
-//         >
-//           <Ticktok className=" group-hover:text-white transition-all duration-300 ease-in-out fill-current h-5 w-5" />
-//         </Link>

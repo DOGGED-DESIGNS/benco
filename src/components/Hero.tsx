@@ -67,7 +67,7 @@ export default function Hero() {
 
       {/* this is the description and the buttons */}
 
-      <div className="   overflow-hidden  justify-center  flex flex-col bottom-3 top-3 md:left-32 md:right-32  left-16 right-16  z-20 absolute">
+      <div className="   overflow-hidden   justify-center items-center flex flex-col bottom-3 top-3 md:left-32 md:right-32  left-16 right-16  z-20 absolute">
         <div>
           <AnimatePresence mode="wait">
             <motion.p
@@ -89,7 +89,7 @@ export default function Hero() {
                 x: "100%",
               }}
               key={peopleindex}
-              className=" max-w-[25ch] line-clamp-2 h1  font-outfit  md:text-[55px] text-2xl text-white  text-left  leading-snug "
+              className=" max-w-[25ch] line-clamp-2 h1  font-outfit  md:text-[55px] text-2xl text-white  text-center  leading-snug "
             >
               {data[peopleindex]?.des}
             </motion.p>
@@ -116,16 +116,16 @@ export default function Hero() {
               x: "-100%",
             }}
             key={peopleindex}
-            className=" mr-auto mt-5  flex gap-4 "
+            className="  mt-5 flex-wrap  flex gap-4 "
           >
-            <Button className=" rounded-none" size={"lg"}>
+            <Button className="flex-1 rounded-none" size={"lg"}>
               {" "}
               Contact us
             </Button>
             <Button
               variant={"outline"}
               size={"lg"}
-              className="rounded-none text-primary"
+              className="  rounded-none flex-1 text-primary"
             >
               {" "}
               Contact us

@@ -5,7 +5,7 @@ export const data = [
   },
   {
     img: "/img2.jpg",
-    des: "IMAGE ONE TRACKING 2",
+    des: "CONSTRUCTION OF BUILDING AT EBONYI AND ANAMBRA COMBINED",
   },
   {
     img: "/img3.jpg",

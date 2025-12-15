@@ -1,29 +1,40 @@
 "use client";
 import React, { useState } from "react";
-import { ChevronDown, Facebook, InstagramIcon, Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
+import { Facebook, Instagram } from "./svgs";
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
   return (
     <nav>
-      <div className="  flex  bg-slate-200 items-center  py-4 px-2 w-full">
-        <div className=" bg-primary p-2">
+      <div className="  flex  bg-slate-200 items-center gap-4  py-4 px-2 w-full">
+        <Link href={"/"} className=" flex gap-4  items-center  bg-primary p-2">
           <div className=" relative  bg-primary w-12 gap-3 aspect-square">
             <Image
               alt="logo"
-              src={"/logo.png"}
+              src={"/benlogo.png"}
               fill
               className=" object-cover object-top h-full w-full"
             />
           </div>
-        </div>
+          <div>
+            <h1 className=" m-0 h2">BENCO DE LIGHT CONSTRUCTION</h1>
+            <h1 className=" m-0 h6  uppercase text-center text-white tracking-wider ">
+              God our rienfocer
+            </h1>
+          </div>
+        </Link>
 
         <div className=" flex gap-2 ml-auto">
-          <InstagramIcon />
-          <Facebook />
+          <Link href={"#"}>
+            <Instagram className=" fill-current w-8 h-8  text-black" />
+          </Link>
+          <Link href={"#"}>
+            <Facebook className="fill-current  w-8 h-8 text-black" />
+          </Link>
         </div>
       </div>
 

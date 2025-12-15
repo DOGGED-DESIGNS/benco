@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 import { Button } from "./ui/button";
 import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
-import { Loader } from "lucide-react";
+import { Loader, Loader2 } from "lucide-react";
 
 export default function Featured() {
   const fetcher = async ({ pageParam = 1 }) => {
@@ -21,13 +21,19 @@ export default function Featured() {
   //     fetcher();
   //   }, []);
 
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
-    useInfiniteQuery({
-      queryKey: ["infinit"],
-      queryFn: fetcher,
-      initialPageParam: 1,
-      getNextPageParam: (lastPage) => lastPage.nextPage,
-    });
+  const {
+    data,
+    isLoading,
+    error,
+    fetchNextPage,
+    hasNextPage,
+    isFetchingNextPage,
+  } = useInfiniteQuery({
+    queryKey: ["infinit"],
+    queryFn: fetcher,
+    initialPageParam: 1,
+    getNextPageParam: (lastPage) => lastPage.nextPage,
+  });
 
   return (
     <div className=" my-10">
@@ -35,22 +41,41 @@ export default function Featured() {
 
       {/* featured project loop */}
 
+      {isLoading && (
+        <div className=" my-4  w-full flex">
+          <div className=" space-x-2 mx-auto">
+            <Loader2 className=" text-primary mx-auto animate-spin" /> LOADING..
+          </div>{" "}
+        </div>
+      )}
+      {error && (
+        <div>
+          {" "}
+          <p className=" text-red-800 p2 uppercase text-center  ">
+            {" "}
+            Something went wront{" "}
+          </p>{" "}
+        </div>
+      )}
+
       <div className=" mt-8 px-10 gap-10   max-w-screen-lg w-full mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  ">
         {data?.pages.map((page) =>
           page.items.map((item: any) => (
-            <div>
-              <div className=" border relative w-full aspect-[9/10]">
-                <Image
-                  fill
-                  alt="image"
-                  src={item.url}
-                  className=" w-full h-full object-cover object-top "
-                />
+            <>
+              <div>
+                <div className=" border relative w-full aspect-[9/10]">
+                  <Image
+                    fill
+                    alt="image"
+                    src={item.url}
+                    className=" w-full h-full object-cover object-top "
+                  />
+                </div>
+                <p className=" mt-2 text-black  p2 uppercase text-center font-semibold">
+                  {item.des}
+                </p>
               </div>
-              <p className=" mt-2 text-black  p2 uppercase text-center font-semibold">
-                {item.des}
-              </p>
-            </div>
+            </>
           ))
         )}
       </div>

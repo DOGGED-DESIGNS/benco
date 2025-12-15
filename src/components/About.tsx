@@ -33,7 +33,7 @@ export default function About() {
           Alias officia ipsum libero quas!
         </p>
 
-        <div className=" flex mt-10  ">
+        <Link href={"/about"} className=" flex mt-10  ">
           <Button
             variant={"outline"}
             size={"lg"}
@@ -42,7 +42,7 @@ export default function About() {
             {" "}
             Learn More
           </Button>
-        </div>
+        </Link>
       </div>
     </div>
   );
