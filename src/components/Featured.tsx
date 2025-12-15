@@ -8,7 +8,7 @@ import { Loader, Loader2 } from "lucide-react";
 export default function Featured() {
   const fetcher = async ({ pageParam = 1 }) => {
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/api/draw?page=${pageParam}`,
+      `https://www.bencodelighlimited.com.ng/api/draw?page=${pageParam}`,
       {
         method: "GET",
         headers: { "Content-Type": "application/json" },

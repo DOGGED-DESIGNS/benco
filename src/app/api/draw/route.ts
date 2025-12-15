@@ -1,6 +1,11 @@
 // app/api/ben/route.ts
 import { db } from "@/app/db/connect";
-import { NextResponse } from "next/server";
+
+const headers = {
+  "Access-Control-Allow-Origin": "https://www.bencodelighlimited.com.ng",
+  "Access-Control-Allow-Methods": "GET,OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type",
+};
 
 export async function GET(req: Request) {
   try {
@@ -14,7 +19,7 @@ export async function GET(req: Request) {
     const items = await db.ben.findMany({
       take,
       skip,
-      //   orderBy: { createdAt: "desc" }, // newest first
+      // orderBy: { createdAt: "desc" },
     });
 
     // Count total items to determine if there are more pages
@@ -25,12 +30,18 @@ export async function GET(req: Request) {
       JSON.stringify({
         items,
         nextPage: page * take < total ? page + 1 : undefined,
-      })
+      }),
+      { status: 200, headers }
     );
   } catch (err) {
     return new Response(
       JSON.stringify({ error: "Failed to fetch items", details: `${err}` }),
-      { status: 500 }
+      { status: 500, headers }
     );
   }
+}
+
+// Handle OPTIONS preflight request
+export async function OPTIONS() {
+  return new Response(null, { status: 204, headers });
 }
