@@ -7,13 +7,10 @@ import { Loader, Loader2 } from "lucide-react";
 
 export default function Featured() {
   const fetcher = async ({ pageParam = 1 }) => {
-    const res = await fetch(
-      `https://www.bencodelighlimited.com.ng/api/draw?page=${pageParam}`,
-      {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    const res = await fetch(`/api/draw?page=${pageParam}`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
 
     if (!res.ok) throw new Error("Failed to fetch");
 
