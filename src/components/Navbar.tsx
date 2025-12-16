@@ -36,7 +36,7 @@ export default function Navbar() {
               BENCO DE LIGHT CONSTRUCTION
             </h1>
             <h1 className=" m-0 h8  uppercase text-center text-white tracking-wider ">
-              God our rienfocer
+              God our Reinforcer
             </h1>
           </div>
         </Link>
