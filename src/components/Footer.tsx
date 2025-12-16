@@ -14,7 +14,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className=" flex  px-5 border   flex-col  pt-20 pb-12 bg-primary ">
+    <div className=" flex  px-5 border   flex-col  pt-10 pb-12 bg-primary ">
       <div className=" mx-auto mb-8 flex gap-5 ">
         <Link
           href={"#"}
@@ -30,19 +30,19 @@ export default function Footer() {
           <Twitter className=" group-hover:text-white transition-all duration-300 ease-in-ou fill-current h-5 w-5" />
         </Link> */}
         {/* pinterstes */}
-        <Link
+        {/* <Link
           href={"#"}
           className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#E60023]"
         >
           <Pinterest className=" group-hover:text-white transition-all duration-300 ease-in-ou fill-current h-5 w-5" />
-        </Link>
+        </Link> */}
         {/* instagram */}
-        <Link
+        {/* <Link
           href={"#"}
           className=" p-2 rounded-full transition-all duration-300 ease-in-out group bg-gradient-to-tr  hover:from-[#F58529]  hover:via-[#DD2A7B] hover:to-[#515BD4] "
         >
           <Instagram className=" group-hover:text-white transition-all duration-300 ease-in-out fill-current h-5 w-5" />
-        </Link>
+        </Link> */}
 
         {/* <Link
           href={"#"}
@@ -68,23 +68,26 @@ export default function Footer() {
 
       {/* links */}
       <div className=" mt-5 mx-auto flex-wrap justify-center  space-x-5 flex gap-1 ">
-        <Link href={"#"} className="h6  uppercase">
+        <Link href={"#home"} className="h6  uppercase">
           {" "}
           HOME
         </Link>
-        <Link href={"#"} className="h6  whitespace-nowrap  uppercase">
+        <Link href={"#about"} className="h6  whitespace-nowrap  uppercase">
           {" "}
           ABOUT US
         </Link>
-        <Link href={"#"} className="h6    uppercase">
+        <Link href={"#contact"} className="h6    uppercase">
           CONTACT US
         </Link>
-        <Link href={"#"} className="h6 whitespace-nowrap       uppercase">
+        <Link
+          href={"#featured"}
+          className="h6 whitespace-nowrap       uppercase"
+        >
           FEATURED PROJECTS
         </Link>
-        <Link href={"#"} className="h6 whitespace-nowrap uppercase">
+        {/* <Link href={"#"} className="h6 whitespace-nowrap uppercase">
           PRIVACY POLICY
-        </Link>
+        </Link> */}
         {/* <Link href={"#"} className="h6 whitespace-nowrap  uppercase">
           COPYRIGHT
         </Link> */}
@@ -110,7 +113,13 @@ export default function Footer() {
                 className=" object-cover object-top h-full w-full"
               />
             </div>
-            <h2 className=" m-0 font-semibold P2"> BENCO DE LIGHT LIMITED </h2>
+            <div>
+              <h2 className=" m-0 font-semibold P2">
+                {" "}
+                BENCO DE LIGHT LIMITED{" "}
+              </h2>
+              <p className=" P2 font-bold"> RC-1783284 </p>
+            </div>
           </div>
         </div>
       </div>

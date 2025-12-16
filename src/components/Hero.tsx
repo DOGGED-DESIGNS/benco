@@ -3,9 +3,10 @@ import React, { useRef, useEffect, useState } from "react";
 import { data } from "@/constants/data";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { Button } from "./ui/button";
+import { Button, buttonVariants } from "./ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import Link from "next/link";
 
 export default function Hero() {
   const [height, setHeight] = useState(0);
@@ -130,18 +131,27 @@ export default function Hero() {
             key={peopleindex}
             className="   mt-5 flex-wrap  flex gap-4 "
           >
-            <Button className="flex-1 rounded-none" size={"lg"}>
+            <Link
+              href={"#contact"}
+              className={buttonVariants({
+                className: "flex-1 uppercase rounded-none",
+                size: "lg",
+              })}
+            >
               {" "}
               Contact us
-            </Button>
-            <Button
-              variant={"outline"}
-              size={"lg"}
-              className="  rounded-none flex-1 text-primary"
+            </Link>
+            <Link
+              href={"#featured"}
+              className={buttonVariants({
+                className: " uppercase  rounded-none flex-1 text-primary",
+                size: "lg",
+                variant: "outline",
+              })}
             >
               {" "}
               Our Projects
-            </Button>
+            </Link>
           </motion.div>
         </AnimatePresence>
       </div>

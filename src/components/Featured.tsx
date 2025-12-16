@@ -39,7 +39,7 @@ export default function Featured() {
   });
 
   return (
-    <div className="  my-20">
+    <div id="featured" className="  my-20">
       <p className=" h1 text-center uppercase "> FEATURED PROJECTS</p>
 
       {/* featured project loop */}

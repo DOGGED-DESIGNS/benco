@@ -32,7 +32,10 @@ export default function Contact() {
     setTimeout(() => setCopied(false), 1500);
   };
   return (
-    <div className=" max-w-screen-lg w-full my-10  mx-auto px-10  mt-10">
+    <div
+      id="contact"
+      className=" max-w-screen-lg w-full my-10  mx-auto px-8  mt-10"
+    >
       <h1 className=" h1 uppercase text-center ">contact</h1>
 
       <div className=" mt-10 max-w-screen-sm  mx-auto">
@@ -57,7 +60,7 @@ export default function Contact() {
 
         <Card className=" mt-10  rounded-none">
           <CardHeader>
-            <LocateFixed className=" mx-auto border mb-4 text-primary" />
+            <LocateFixed className=" mx-auto  mb-4 text-primary" />
             <CardTitle className="p2 text-center uppercase">
               {" "}
               LOCATION
@@ -80,7 +83,7 @@ export default function Contact() {
               </div>
             </div>
             <div className=" ">
-              <Mail className=" mx-auto border mb-3 text-primary" />
+              <Mail className=" mx-auto  mb-3 text-primary" />
             </div>
             <CardTitle className="p2 mt-4 text-center uppercase">
               {" "}

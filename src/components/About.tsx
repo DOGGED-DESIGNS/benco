@@ -28,12 +28,11 @@ export default function About() {
         </h1>
 
         <p className=" line-clamp-4   p2">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi illum
-          dolor atque natus dolore? Temporibus vel veniam accusamus eligendi non
-          architecto eos voluptates. Praesentium natus delectus eius consequatur
-          recusandae optio illum commodi possimus ad quo! Est adipisci tempora
-          repellendus, suscipit quibusdam aliquam dignissimos ipsa possimus!
-          Alias officia ipsum libero quas!
+          Ben Co-De Light Limited is built on quality, trust, and dependable
+          service delivery. We operate across construction, agriculture,
+          hospitality, land surveying, and export, bringing excellence to every
+          sector we serve. Our focus is simple: deliver real value, build
+          lasting relationships, and grow sustainably.
         </p>
 
         <Link href={"/about"} className=" flex mt-10  ">

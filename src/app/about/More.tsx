@@ -40,12 +40,12 @@ export default function More() {
               WHAT BENCO DE LIGHT IS ALL ABOUT{" "}
             </h1>
 
-            <p className=" p2  mt-auto  mx-auto max-w-[40ch]  text-justify ">
-              {" "}
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit
-              maiores corrupti ratione aliquid mollitia esse blanditiis officiis
-              cum autem hic obcaecati eius possimus velit veritatis, cumque
-              voluptate minus reiciendis molestiae!{" "}
+            <p className=" p2 p-4 mt-auto  mx-auto max-w-[40ch]  text-justify ">
+              Ben Co-De Light Limited is built on quality, trust, and dependable
+              service delivery. We operate across construction, agriculture,
+              hospitality, land surveying, and export, bringing excellence to
+              every sector we serve. Our focus is simple: deliver real value,
+              build lasting relationships, and grow sustainably.
             </p>
           </div>
         </div>
@@ -57,24 +57,48 @@ export default function More() {
           <h1 className=" h1 p-2  text-4xl mr-auto">OUR MISSION</h1>
           <h1 className="  p2 max-w-[40ch] p-2   ml-auto text-justify">
             {" "}
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
-            placeat ad voluptate natus. Necessitatibus, perferendis facere.
-            Quidem rem soluta perspiciatis, tempora fugit expedita est optio
-            aperiam, praesentium cum, quo error corporis sint nisi laborum odit
-            illo delectus nemo dicta atque repellat quia quam sed? Perspiciatis
-            cupiditate aut culpa cumque in.{" "}
+            Our mission is to deliver high-quality, reliable, and innovative
+            services across construction, agriculture, hospitality, land
+            surveying, and export operations, while fostering sustainable
+            growth, customer satisfaction, and positive impact in every
+            community we serve.
           </h1>
         </div>
         <div className="  my-20 space-y-8  max-w-screen-lg w-full mx-auto flex flex-col">
           <h1 className=" h1  text-4xl ml-auto p-2">OUR OBJECTIVE</h1>
           <h1 className="  p-2 p2 max-w-[40ch]   mr-auto text-justify">
-            {" "}
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora
-            placeat ad voluptate natus. Necessitatibus, perferendis facere.
-            Quidem rem soluta perspiciatis, tempora fugit expedita est optio
-            aperiam, praesentium cum, quo error corporis sint nisi laborum odit
-            illo delectus nemo dicta atque repellat quia quam sed? Perspiciatis
-            cupiditate aut culpa cumque in.{" "}
+            <ol className=" space-y-4  list-decimal list-inside text-justify">
+              <li className=" py-4 border-b ">
+                Quality Excellence To consistently provide superior services
+                that meet and exceed industry standards across all sectors of
+                operation.
+              </li>
+              <li className=" py-4 border-b ">
+                Customer Satisfaction To build long-term relationships with
+                clients through professionalism, transparency, and dependable
+                service delivery.
+              </li>
+              <li className=" py-4 border-b ">
+                Sustainable Growth To grow responsibly by adopting sustainable
+                practices that support economic development and environmental
+                stewardship.
+              </li>
+              <li className=" py-4 border-b ">
+                Operational Diversity To strengthen and expand our diversified
+                business portfolio, ensuring stability and resilience across
+                multiple industries.
+              </li>
+              <li className=" py-4 border-b ">
+                Innovation and Efficiency To embrace modern techniques,
+                technology, and best practices that improve efficiency, safety,
+                and overall performance.
+              </li>
+              <li className=" py-4 border-b ">
+                Community Development To contribute positively to local
+                communities through job creation, ethical business practices,
+                and social responsibility.
+              </li>
+            </ol>
           </h1>
         </div>
       </div>
@@ -103,7 +127,10 @@ export default function More() {
               </CardHeader>
               <CardContent>
                 <CardDescription>
-                  Long-term solutions for better protection of asset value
+                  We go beyond basic service delivery to create real value in
+                  every project. Our approach focuses on long-term benefits, not
+                  short-term gains. This ensures our clients get results that
+                  truly make a difference.
                 </CardDescription>
               </CardContent>
             </Card>

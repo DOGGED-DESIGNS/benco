@@ -20,7 +20,7 @@ export default function Navbar() {
   }, [toggle]);
 
   return (
-    <nav>
+    <nav id="home">
       <div className="  flex  bg-slate-200 items-center gap-4  py-4 px-2 w-full">
         <Link href={"/"} className=" flex gap-4  items-center  bg-primary p-2">
           <div className=" relative  bg-primary w-12 gap-3 aspect-square">
@@ -58,6 +58,9 @@ export default function Navbar() {
         className=" flex flex-col transition-all duration-150 ease-in-out   bg-primary py-3 px-3"
       >
         <div onClick={() => setToggle(!toggle)} className="   my-auto flex  ">
+          <div>
+            <h2 className=" font-bold p2 uppercase"> RC-1783284 </h2>
+          </div>
           <div className="ml-auto">
             {toggle ? (
               <X className=" border h-8 w-8 text-white" />
@@ -87,19 +90,29 @@ export default function Navbar() {
               className=" bg-primary p-4  flex flex-col mt-0 space-y-4 "
             >
               <Link
-                href={"#"}
+                href={"#home"}
+                onClick={() => setToggle(false)}
                 className=" hover:bg-slate-300/20 p-2 rounded-md duration-300 transition-all  text-white font-semibold p2 uppercase"
               >
                 HOME
               </Link>
               <Link
-                href={"#"}
+                onClick={() => setToggle(false)}
+                href={"#about"}
                 className=" hover:bg-slate-300/20 p-2 rounded-md duration-300 transition-all  text-white font-semibold p2 uppercase"
               >
                 ABOUT
               </Link>
               <Link
-                href={"#"}
+                onClick={() => setToggle(false)}
+                href={"#featured"}
+                className=" hover:bg-slate-300/20 p-2 rounded-md duration-300 transition-all  text-white font-semibold p2 uppercase"
+              >
+                PROJECTS
+              </Link>
+              <Link
+                onClick={() => setToggle(false)}
+                href={"#service"}
                 className=" flex gap-1 hover:bg-slate-300/20 p-2 rounded-md duration-300 transition-all  text-white font-semibold p2 uppercase"
               >
                 SERVICES <ChevronDown />

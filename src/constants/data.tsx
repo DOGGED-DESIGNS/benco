@@ -1,14 +1,18 @@
 export const data = [
+  // {
+  //   img: "/3D.jpg",
+  //   des: "From vision to reality",
+  // },
   {
-    img: "/img1.jpg",
-    des: "IMAGE ONE TRACKING 1",
+    img: "/3D2.jpg",
+    des: "Designs that are ready to be built.",
   },
   {
-    img: "/img2.jpg",
-    des: "CONSTRUCTION OF BUILDING AT EBONYI AND ANAMBRA COMBINED",
+    img: "/workers.jpg",
+    des: "Skilled hands. Solid results.",
   },
   {
-    img: "/img3.jpg",
-    des: "IMAGE ONE TRACKING 3",
+    img: "/carcase.jpg",
+    des: "Built right, down to the last detail.",
   },
 ];
