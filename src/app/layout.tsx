@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "Ben Co-De Light Limited",
+    default: "Construction Company in Ebonyi state (Ben Co-De Light Limited)",
     template: "%s - Ben Co-De Light Limited",
   },
   metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}`),
