@@ -51,7 +51,8 @@ export default function Contact() {
           <CardFooter>
             <Button className=" w-full uppercase">
               {" "}
-              <Whatsapp className=" fill-current text-white" /> Whatsapp{" "}
+              <Whatsapp className=" fill-current text-white" /> +234 903 667
+              0283
             </Button>
           </CardFooter>
         </Card>
@@ -90,7 +91,7 @@ export default function Contact() {
               email
             </CardTitle>
             <CardDescription className=" font-bold text-primary text-center p2">
-              bencodelightlimited@gmail.com
+              bencodelightconstruction@gmail.com
             </CardDescription>
           </CardHeader>
         </Card>
