@@ -4,7 +4,7 @@ import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
-import { Facebook, Instagram } from "./svgs";
+import { Facebook, Instagram, Ticktok } from "./svgs";
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
@@ -40,10 +40,16 @@ export default function Navbar() {
         </Link>
 
         <div className=" flex pr-4 gap-10 ml-auto">
-          <Link href={"#"}>
-            <Instagram className=" fill-current md:w-8 md:h-8 h-4 w-4  text-black" />
+          <Link
+            target="_blank"
+            href={"https://vm.tiktok.com/ZSHKSV6kxBoW7-TBYlO/"}
+          >
+            <Ticktok className=" fill-current md:w-8 md:h-8 h-4 w-4  text-black" />
           </Link>
-          <Link href={"#"}>
+          <Link
+            target="_blank"
+            href={"https://www.facebook.com/profile.php?id=100094464217223"}
+          >
             <Facebook className="fill-current   md:w-8 md:h-8 h-4 w-4 text-black" />
           </Link>
         </div>

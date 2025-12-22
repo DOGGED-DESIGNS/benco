@@ -17,7 +17,8 @@ export default function Footer() {
     <div className=" flex  px-5 border   flex-col  pt-10 pb-12 bg-primary ">
       <div className=" mx-auto mb-8 flex gap-5 ">
         <Link
-          href={"#"}
+          target="_blank"
+          href={"https://www.facebook.com/profile.php?id=100094464217223"}
           className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#1877F2]"
         >
           <Facebook className=" group-hover:text-white transition-all duration-300 ease-in-ou fill-current h-5 w-5" />
@@ -52,18 +53,20 @@ export default function Footer() {
         </Link> */}
         {/* whatsapp */}
         <Link
-          href={"#"}
+          href="https://wa.me/2349036670283"
+          target="_blank"
           className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#25D366]"
         >
           <Whatsapp className=" group-hover:text-white transition-all duration-300 ease-in-out fill-current h-5 w-5" />
         </Link>
 
-        {/* <Link
-          href={"#"}
+        <Link
+          target="_blank"
+          href={"https://vm.tiktok.com/ZSHKSV6kxBoW7-TBYlO/"}
           className=" group p-2 rounded-full transition-all duration-300 ease-in-out  bg-gradient-to-r hover:from-[#25F4EE] hover:via-black hover:to-[#FF0050]"
         >
           <Ticktok className=" group-hover:text-white transition-all duration-300 ease-in-out fill-current h-5 w-5" />
-        </Link> */}
+        </Link>
       </div>
 
       {/* links */}
