@@ -85,7 +85,7 @@ export default function Contact() {
             </CardTitle>
             <CardDescription className=" font-bold text-primary text-center p2">
               no. 1 Ogoja Road Abakaliki, Edward Nkwegu Close, near Anglican
-              Abakaliki
+              cathedral Abakaliki
             </CardDescription>
           </CardHeader>
         </Card>
