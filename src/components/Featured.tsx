@@ -56,7 +56,7 @@ export default function Featured() {
           {" "}
           <p className=" text-red-800 p2 uppercase text-center  ">
             {" "}
-            Something went wront{" "}
+            Something went wrong{" "}
           </p>{" "}
         </div>
       )}

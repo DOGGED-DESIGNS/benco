@@ -8,6 +8,8 @@ import {
   Construct,
   Drawing,
   Estate,
+  Export,
+  Import,
   Piggery,
   Sales,
   Survey,
@@ -18,6 +20,14 @@ const mover: { name: string; img: React.ReactNode }[] = [
   {
     name: "building drawings",
     img: <Drawing className=" w-20 h-20 fill-current text-primary" />,
+  },
+  {
+    name: "Import of modern building materials",
+    img: <Import className=" w-20 h-20 fill-current text-primary" />,
+  },
+  {
+    name: "Export of modern building materials",
+    img: <Export className=" w-20 h-20 fill-current text-primary" />,
   },
   {
     name: "building construction",

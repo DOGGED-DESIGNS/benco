@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { toast } from "sonner";
 import {
   Card,
   CardDescription,
@@ -30,6 +31,14 @@ export default function Contact() {
     await navigator.clipboard.writeText(email);
     setCopied(true);
     setTimeout(() => setCopied(false), 1500);
+    toast.success("Email copied to clipboard");
+  };
+
+  const copyPhone = async () => {
+    await navigator.clipboard.writeText("+234 903 667 0283");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+    toast.success("Phone number copied to clipboard");
   };
   return (
     <div
@@ -41,11 +50,19 @@ export default function Contact() {
       <div className=" mt-10 max-w-screen-sm  mx-auto">
         <Card className="  rounded-none  bg-gradient-to-tr from-primary/40">
           <CardHeader>
+            <div className="   flex">
+              <div className=" flex-1 "></div>
+              <div>
+                <Button onClick={copyPhone} variant={"ghost"} size={"icon"}>
+                  {copied ? "copied ✓" : <Copy className="text-primary" />}
+                </Button>
+              </div>
+            </div>
             <CardTitle className=" text-center">
               TALK TO THE MANAGER DIRECTLY
             </CardTitle>
             <CardDescription className=" mt-10 text-center">
-              CHAT OR CALL ON WATSAPP
+              CHAT ON WATSAPP OR CALL DIRECTLY
             </CardDescription>
           </CardHeader>
           <CardFooter>
