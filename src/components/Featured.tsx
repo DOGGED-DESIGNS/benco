@@ -144,6 +144,26 @@ export default function Featured() {
                 ))
               )}
             </motion.div>
+            {hasNextPage && (
+              <div className=" mt-8 flex">
+                <Button
+                  variant={"outline"}
+                  size={"lg"}
+                  className=" mx-auto border-primary text-primary p2 font-bold rounded-none"
+                  onClick={() => fetchNextPage()}
+                  disabled={isFetchingNextPage}
+                >
+                  {isFetchingNextPage ? (
+                    <>
+                      {" "}
+                      <Loader className=" text-primary animate-spin" /> Loadmore{" "}
+                    </>
+                  ) : (
+                    "Load More"
+                  )}
+                </Button>
+              </div>
+            )}
           </>
         ) : (
           <motion.div
@@ -200,27 +220,6 @@ export default function Featured() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      {hasNextPage && (
-        <div className=" mt-8 flex">
-          <Button
-            variant={"outline"}
-            size={"lg"}
-            className=" mx-auto border-primary text-primary p2 font-bold rounded-none"
-            onClick={() => fetchNextPage()}
-            disabled={isFetchingNextPage}
-          >
-            {isFetchingNextPage ? (
-              <>
-                {" "}
-                <Loader className=" text-primary animate-spin" /> Loadmore{" "}
-              </>
-            ) : (
-              "Load More"
-            )}
-          </Button>
-        </div>
-      )}
 
       {/* <div className=" mt-8 flex">
         <Button
