@@ -32,9 +32,7 @@ export default function Navbar() {
             />
           </div>
           <div>
-            <h1 className=" m-0 text-center  h8">
-              BENCO DE LIGHT CONSTRUCTION
-            </h1>
+            <h1 className=" m-0 text-center  h8">BENCO DE LIGHT LIMITED</h1>
             <h1 className=" m-0 h8  uppercase text-center text-white tracking-wider ">
               God our Reinforcer
             </h1>
