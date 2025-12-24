@@ -24,6 +24,7 @@ export default function Contact() {
   // const [setCopied, setCopied] = useState( false)
 
   const [copied, setCopied] = useState(false);
+  const [copiedphone, setCopiedphone] = useState(false);
 
   const email = "email";
 
@@ -37,7 +38,7 @@ export default function Contact() {
   const copyPhone = async () => {
     await navigator.clipboard.writeText("+234 903 667 0283");
     setCopied(true);
-    setTimeout(() => setCopied(false), 1500);
+    setTimeout(() => setCopiedphone(false), 1500);
     toast.success("Phone number copied to clipboard");
   };
   return (
@@ -54,7 +55,7 @@ export default function Contact() {
               <div className=" flex-1 "></div>
               <div>
                 <Button onClick={copyPhone} variant={"ghost"} size={"icon"}>
-                  {copied ? "copied ✓" : <Copy className="text-primary" />}
+                  {copiedphone ? "✓" : <Copy className="text-primary" />}
                 </Button>
               </div>
             </div>
@@ -96,7 +97,7 @@ export default function Contact() {
               <div className=" flex-1 "></div>
               <div>
                 <Button onClick={handleCopy} variant={"ghost"} size={"icon"}>
-                  {copied ? "copied ✓" : <Copy className="text-primary" />}
+                  {copied ? "✓" : <Copy className="text-primary" />}
                 </Button>
               </div>
             </div>
