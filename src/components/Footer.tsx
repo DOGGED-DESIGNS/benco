@@ -1,131 +1,89 @@
 "use client";
 import React from "react";
-import {
-  Facebook,
-  Instagram,
-  Pinterest,
-  Ticktok,
-  Twitter,
-  Whatsapp,
-  Youtube,
-} from "./svgs";
+import { Facebook, Ticktok, Whatsapp } from "./svgs";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Footer() {
   return (
-    <div className=" flex  px-5 border   flex-col  pt-10 pb-12 bg-primary ">
-      <div className=" mx-auto mb-8 flex gap-5 ">
+    <footer className="flex flex-col px-5 pt-10 pb-12 bg-primary border-t border-slate-600">
+      {/* Social Media Links */}
+      <div className="mx-auto mb-8 flex gap-5">
         <Link
           target="_blank"
-          href={"https://www.facebook.com/profile.php?id=100094464217223"}
-          className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#1877F2]"
+          href="https://www.facebook.com/profile.php?id=100094464217223"
+          aria-label="Facebook"
+          className="group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#1877F2]"
         >
-          <Facebook className=" group-hover:text-white transition-all duration-300 ease-in-ou fill-current h-5 w-5" />
+          <Facebook className="fill-current h-5 w-5 group-hover:text-white transition-all duration-300 ease-in-out" />
         </Link>
-        {/* twiter */}
-        {/* <Link
-          href={"#"}
-          className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#1DA1F2]"
-        >
-          <Twitter className=" group-hover:text-white transition-all duration-300 ease-in-ou fill-current h-5 w-5" />
-        </Link> */}
-        {/* pinterstes */}
-        {/* <Link
-          href={"#"}
-          className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#E60023]"
-        >
-          <Pinterest className=" group-hover:text-white transition-all duration-300 ease-in-ou fill-current h-5 w-5" />
-        </Link> */}
-        {/* instagram */}
-        {/* <Link
-          href={"#"}
-          className=" p-2 rounded-full transition-all duration-300 ease-in-out group bg-gradient-to-tr  hover:from-[#F58529]  hover:via-[#DD2A7B] hover:to-[#515BD4] "
-        >
-          <Instagram className=" group-hover:text-white transition-all duration-300 ease-in-out fill-current h-5 w-5" />
-        </Link> */}
 
-        {/* <Link
-          href={"#"}
-          className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#FF0000]"
-        >
-          <Youtube className=" group-hover:text-white transition-all duration-300 ease-in-out fill-current h-5 w-5" />
-        </Link> */}
-        {/* whatsapp */}
         <Link
           href="https://wa.me/2349036670283"
           target="_blank"
-          className=" group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#25D366]"
+          aria-label="WhatsApp"
+          className="group p-2 rounded-full transition-all duration-300 ease-in-out hover:bg-[#25D366]"
         >
-          <Whatsapp className=" group-hover:text-white transition-all duration-300 ease-in-out fill-current h-5 w-5" />
+          <Whatsapp className="fill-current h-5 w-5 group-hover:text-white transition-all duration-300 ease-in-out" />
         </Link>
 
         <Link
           target="_blank"
-          href={"https://vm.tiktok.com/ZSHKSV6kxBoW7-TBYlO/"}
-          className=" group p-2 rounded-full transition-all duration-300 ease-in-out  bg-gradient-to-r hover:from-[#25F4EE] hover:via-black hover:to-[#FF0050]"
+          href="https://vm.tiktok.com/ZSHKSV6kxBoW7-TBYlO/"
+          aria-label="TikTok"
+          className="group p-2 rounded-full transition-all duration-300 ease-in-out bg-gradient-to-r hover:from-[#25F4EE] hover:via-black hover:to-[#FF0050]"
         >
-          <Ticktok className=" group-hover:text-white transition-all duration-300 ease-in-out fill-current h-5 w-5" />
+          <Ticktok className="fill-current h-5 w-5 group-hover:text-white transition-all duration-300 ease-in-out" />
         </Link>
       </div>
 
-      {/* links */}
-      <div className=" mt-5 mx-auto flex-wrap justify-center  space-x-5 flex gap-1 ">
-        <Link href={"#home"} className="h6  uppercase">
-          {" "}
+      {/* Footer Navigation Links */}
+      <nav
+        aria-label="Footer Navigation"
+        className="mt-5 flex flex-wrap justify-center gap-5"
+      >
+        <Link href="#home" className="h6 uppercase">
           HOME
         </Link>
-        <Link href={"#about"} className="h6  whitespace-nowrap  uppercase">
-          {" "}
+        <Link href="#about" className="h6 uppercase">
           ABOUT US
         </Link>
-        <Link href={"#contact"} className="h6    uppercase">
+        <Link href="#contact" className="h6 uppercase">
           CONTACT US
         </Link>
-        <Link
-          href={"#featured"}
-          className="h6 whitespace-nowrap       uppercase"
-        >
+        <Link href="#featured" className="h6 uppercase">
           FEATURED PROJECTS
         </Link>
-        {/* <Link href={"#"} className="h6 whitespace-nowrap uppercase">
-          PRIVACY POLICY
-        </Link> */}
-        {/* <Link href={"#"} className="h6 whitespace-nowrap  uppercase">
-          COPYRIGHT
-        </Link> */}
-      </div>
+      </nav>
 
-      <div className=" max-w-screen-xl mx-auto w-full h-[1px] mt-3 bg-slate-500 " />
+      {/* Divider */}
+      <div className="max-w-screen-xl mx-auto w-full h-px mt-3 bg-slate-500" />
 
-      <div className="    mt-8 w-full   max-w-screen-xl mx-auto">
-        <div className="  items-center   space-y-4  gap-10 md:flex">
-          <p className=" h8  uppercase font-extrabold  ">
-            &copy;2025 all right reserved{" "}
-          </p>
-          <p className=" mx-auto flex-1 text-center max-w-[50ch] line-clamp-2 h6 font-light">
-            no. 1 Ogoja Road Abakaliki, Edward Nkwegu Close, near Anglican
-            Abakaliki
-          </p>
-          <div className=" items-center flex gap-4">
-            <div className=" ml-auto relative  bg-primary w-12 gap-3 aspect-square">
-              <Image
-                alt="logo"
-                src={"/benlogo.png"}
-                fill
-                className=" object-cover object-top h-full w-full"
-              />
-            </div>
-            <div>
-              <h2 className=" m-0 font-semibold P2">
-                {" "}
-                BENCO DE LIGHT LIMITED{" "}
-              </h2>
-              <p className=" P2 font-bold"> RC-1783284 </p>
-            </div>
+      {/* Company Info */}
+      <div className="mt-8 w-full max-w-screen-xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <p className="h8 uppercase font-extrabold">
+          &copy; 2025 All Rights Reserved
+        </p>
+        <p className="mx-auto text-center max-w-[50ch] line-clamp-2 h6 font-light">
+          No. 1 Ogoja Road, Abakaliki, Edward Nkwegu Close, near Anglican
+          Cathedral, Abakaliki
+        </p>
+
+        <div className="flex items-center gap-4">
+          <div className="relative bg-primary w-12 aspect-square">
+            <Image
+              alt="BENCO DE LIGHT LIMITED Logo"
+              src="/benlogo.png"
+              fill
+              className="object-cover object-top"
+            />
+          </div>
+          <div>
+            <h2 className="m-0 font-semibold p2">BENCO DE LIGHT LIMITED</h2>
+            <p className="p2 font-bold">RC-1783284</p>
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 }

@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useRef, useState } from "react";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -8,124 +9,147 @@ import { Facebook, Instagram, Ticktok } from "./svgs";
 
 export default function Navbar() {
   const [toggle, setToggle] = useState(false);
-  const refnav = useRef<HTMLDivElement>(null);
-  const [height, setHeight] = useState(50);
+  const refnav = useRef<HTMLUListElement>(null);
+  const [height, setHeight] = useState(56);
 
   useEffect(() => {
     if (toggle && refnav.current) {
-      setHeight(refnav.current.offsetHeight + 60);
+      setHeight(refnav.current.offsetHeight + 72);
     } else {
-      setHeight(50); // reset to default height
+      setHeight(56);
     }
   }, [toggle]);
 
   return (
-    <nav id="home">
-      <div className="  flex  bg-slate-200 items-center gap-4  py-4 px-2 w-full">
-        <Link href={"/"} className=" flex gap-4  items-center  bg-primary p-2">
-          <div className=" relative  bg-primary w-12 gap-3 aspect-square">
+    <nav aria-label="Main navigation">
+      {/* ===== Top bar ===== */}
+      <div className="flex bg-slate-200 items-center gap-4 py-4 px-2 w-full">
+        {/* Logo / Brand (NO h1 in navbar) */}
+        <Link href="/" className="flex bg-primary gap-4 items-center p-2">
+          <div className="relative w-12 aspect-square">
             <Image
-              alt="logo"
-              src={"/benlogo.png"}
+              alt="BenCo De Light Limited logo"
+              src="/benlogo.png"
               fill
-              className=" object-cover object-top h-full w-full"
+              className="object-cover"
             />
           </div>
+
           <div>
-            <h1 className=" m-0 text-center  h8">BENCO DE LIGHT LIMITED</h1>
-            <h1 className=" m-0 h8  uppercase text-center text-white tracking-wider ">
+            <span className="block  font-bold text-sm">
+              BENCO DE LIGHT LIMITED
+            </span>
+            <span className="block text-xs uppercase tracking-wider text-white">
               God our Reinforcer
-            </h1>
+            </span>
           </div>
         </Link>
 
-        <div className=" flex pr-4 gap-10 ml-auto">
+        {/* Social links */}
+        <div className="ml-auto flex gap-6 pr-4">
           <Link
+            href="https://vm.tiktok.com/ZSHKSV6kxBoW7-TBYlO/"
             target="_blank"
-            href={"https://vm.tiktok.com/ZSHKSV6kxBoW7-TBYlO/"}
+            aria-label="BenCo De Light on TikTok"
           >
-            <Ticktok className=" fill-current md:w-8 md:h-8 h-4 w-4  text-black" />
+            <Ticktok className="h-5 w-5 md:h-7 md:w-7 fill-current text-black" />
           </Link>
+
           <Link
+            href="https://www.facebook.com/profile.php?id=100094464217223"
             target="_blank"
-            href={"https://www.facebook.com/profile.php?id=100094464217223"}
+            aria-label="BenCo De Light on Facebook"
           >
-            <Facebook className="fill-current   md:w-8 md:h-8 h-4 w-4 text-black" />
+            <Facebook className="h-5 w-5 md:h-7 md:w-7 fill-current text-black" />
           </Link>
+
+          {/* Optional Instagram */}
+          {/* 
+          <Link
+            href="https://instagram.com/yourpage"
+            target="_blank"
+            aria-label="BenCo De Light on Instagram"
+          >
+            <Instagram className="h-5 w-5 md:h-7 md:w-7 fill-current text-black" />
+          </Link>
+          */}
         </div>
       </div>
 
+      {/* ===== Mobile menu ===== */}
       <motion.div
-        style={{
-          height: height,
-        }}
-        className=" flex flex-col transition-all duration-150 ease-in-out   bg-primary py-3 px-3"
+        style={{ height }}
+        className="bg-primary px-3 py-3 transition-all duration-200 ease-in-out"
       >
-        <div onClick={() => setToggle(!toggle)} className="   my-auto flex  ">
-          <div>
-            <h2 className=" font-bold p2 uppercase"> RC-1783284 </h2>
-          </div>
-          <div className="ml-auto">
+        {/* Toggle button (NOT a div) */}
+        <button
+          onClick={() => setToggle(!toggle)}
+          aria-expanded={toggle}
+          aria-controls="primary-navigation"
+          className="flex w-full items-center"
+        >
+          <span className="font-bold uppercase">RC-1783284</span>
+          <span className="ml-auto">
             {toggle ? (
-              <X className=" border h-8 w-8 text-white" />
+              <X className="h-8 w-8 text-white" />
             ) : (
-              <Menu className=" border h-8 w-8 text-white" />
+              <Menu className="h-8 w-8 text-white" />
             )}
-          </div>
-        </div>
+          </span>
+        </button>
 
-        <AnimatePresence key={"move"} mode="wait">
+        <AnimatePresence>
           {toggle && (
-            <motion.div
+            <motion.ul
+              id="primary-navigation"
               ref={refnav}
-              layout
-              initial={{
-                y: "-100%",
-                opacity: 0,
-              }}
-              animate={{
-                y: 0,
-                opacity: 1,
-              }}
-              exit={{
-                y: "-100%",
-                opacity: 0,
-              }}
-              className=" bg-primary p-4  flex flex-col mt-0 space-y-4 "
+              initial={{ y: "-100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "-100%", opacity: 0 }}
+              className="mt-4 space-y-3"
             >
-              <Link
-                href={"#home"}
-                onClick={() => setToggle(false)}
-                className=" hover:bg-slate-300/20 p-2 rounded-md duration-300 transition-all  text-white font-semibold p2 uppercase"
-              >
-                HOME
-              </Link>
-              <Link
-                onClick={() => setToggle(false)}
-                href={"#about"}
-                className=" hover:bg-slate-300/20 p-2 rounded-md duration-300 transition-all  text-white font-semibold p2 uppercase"
-              >
-                ABOUT
-              </Link>
-              <Link
-                onClick={() => setToggle(false)}
-                href={"#featured"}
-                className=" hover:bg-slate-300/20 p-2 rounded-md duration-300 transition-all  text-white font-semibold p2 uppercase"
-              >
-                PROJECTS
-              </Link>
-              <Link
-                onClick={() => setToggle(false)}
-                href={"#service"}
-                className=" flex gap-1 hover:bg-slate-300/20 p-2 rounded-md duration-300 transition-all  text-white font-semibold p2 uppercase"
-              >
-                SERVICES <ChevronDown />
-              </Link>
-            </motion.div>
+              <li>
+                <Link
+                  href="/"
+                  onClick={() => setToggle(false)}
+                  className="block p-2 rounded-md text-white font-semibold uppercase hover:bg-slate-300/20"
+                >
+                  Home
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/about"
+                  onClick={() => setToggle(false)}
+                  className="block p-2 rounded-md text-white font-semibold uppercase hover:bg-slate-300/20"
+                >
+                  About
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/projects"
+                  onClick={() => setToggle(false)}
+                  className="block p-2 rounded-md text-white font-semibold uppercase hover:bg-slate-300/20"
+                >
+                  Projects
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/services"
+                  onClick={() => setToggle(false)}
+                  className="flex items-center gap-1 p-2 rounded-md text-white font-semibold uppercase hover:bg-slate-300/20"
+                >
+                  Services <ChevronDown />
+                </Link>
+              </li>
+            </motion.ul>
           )}
         </AnimatePresence>
-
-        {/* links */}
       </motion.div>
     </nav>
   );

@@ -1,4 +1,3 @@
-import { Book, House } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -6,46 +5,55 @@ import { Button } from "./ui/button";
 
 export default function About() {
   return (
-    <div className=" px-3 py-5 my-20  m gap-10 grid grid-cols-1 max-w-screen-lg w-full mx-auto md:grid-cols-2">
+    <section
+      aria-labelledby="about-section-title"
+      className="px-3 py-5 my-20 gap-10 grid grid-cols-1 max-w-screen-lg w-full mx-auto md:grid-cols-2"
+    >
+      {/* Image */}
       <div>
-        <div className=" relative w-full  overflow-hidden  aspect-video ">
+        <div className="relative w-full overflow-hidden aspect-video">
           <Image
-            alt="img"
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="w-full h-auto object-cover object-top"
-            src={"/aboutpagejojo.png"}
+            src="/aboutpagejojo.png"
+            alt="Ben Co-De Light Limited construction and service operations"
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover object-top"
+            priority
           />
           <div className="absolute bg-primary h-5 left-0 top-0 w-[20%]" />
         </div>
       </div>
 
-      <div className=" self-center">
-        <h1 className=" h1 uppercase text-center font-bold mb-10 ">
-          {" "}
-          About Us{" "}
-        </h1>
+      {/* Content */}
+      <div className="self-center">
+        {/* H2 because this is a section, NOT the page title */}
+        <h2
+          id="about-section-title"
+          className="uppercase text-center font-bold mb-6 h2"
+        >
+          About Us
+        </h2>
 
-        <p className=" line-clamp-4   p2">
+        <p className="p2 max-w-prose mx-auto text-center">
           Ben Co-De Light Limited is built on quality, trust, and dependable
           service delivery. We operate across construction, agriculture,
-          hospitality, land surveying, and export, bringing excellence to every
-          sector we serve. Our focus is simple: deliver real value, build
+          hospitality, land surveying, and export services—bringing excellence
+          to every sector we serve. Our focus is to deliver real value, build
           lasting relationships, and grow sustainably.
         </p>
 
-        <Link href={"/about"} className=" flex mt-10  ">
-          <Button
-            variant={"outline"}
-            size={"lg"}
-            className=" mx-auto border-primary text-primary p2 font-bold rounded-none"
-          >
-            {" "}
-            Learn More
-          </Button>
-        </Link>
+        <div className="mt-8 flex justify-center">
+          <Link href="/about">
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-primary text-primary font-bold rounded-none"
+            >
+              Learn more about Ben Co-De Light Limited
+            </Button>
+          </Link>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
